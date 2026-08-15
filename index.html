@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Adufe Practice — Trauma-Informed Support</title>
+<meta name="description" content="Trauma-informed support for individuals and organisations ready to move from surviving to building. Abuja-based, sessions via Zoom or Google Meet.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Social preview (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Adufe Practice — Trauma-Informed Support">
+<meta property="og:description" content="Trauma-informed support for individuals and organisations ready to move from surviving to building.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Adufe Practice — Trauma-Informed Support">
+<meta name="twitter:description" content="Trauma-informed support for individuals and organisations ready to move from surviving to building.">
+<meta name="twitter:image" content="og-image.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Core palette — connected to workbook but darker, more authoritative */
+  --ink: #0C1712;
+  --ink-soft: #1A2B20;
+  --green-deep: #172D24;
+  --green-mid: #274A38;
+  --green-accent: #4A8768;
+  --green-pale: #C7DDD1;
+  --green-wash: #EEF4F0;
+  --sienna: #9A3E13;
+  --sienna-mid: #C25F2A;
+  --sienna-light: #DE9163;
+  --sienna-pale: #F6E9DF;
+  --cream: #F9F5EE;
+  --cream-deep: #EFE8DA;
+  --white: #FEFBF7;
+  --text-body: #2A2218;
+  --text-secondary: #5A5246;
+  --text-muted: #8A7F74;
+  --border: rgba(26,48,40,0.10);
+  --border-warm: rgba(139,58,20,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAVIGATION ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(14,26,20,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0 48px;
+  display: flex; align-items: center;
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+  color: var(--cream); letter-spacing: 0.04em;
+  text-decoration: none; margin-right: auto;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.nav-logo-sep {
+  width: 1px; height: 16px; background: rgba(255,255,255,0.2);
+  display: inline-block; vertical-align: middle;
+}
+.nav-logo-sub {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(212,132,90,0.8);
+  font-family: 'DM Sans', sans-serif;
+}
+.nav-links {
+  display: flex; gap: 2px; align-items: center;
+}
+.nav-link {
+  font-size: 13px; font-weight: 400; color: rgba(248,244,237,0.55);
+  padding: 6px 14px; text-decoration: none; border-radius: 6px;
+  transition: all 0.2s; cursor: pointer; border: none; background: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.nav-link:hover { color: var(--cream); }
+.nav-cta {
+  font-size: 13px; font-weight: 500;
+  background: var(--sienna); color: var(--cream);
+  padding: 8px 20px; border-radius: 6px;
+  border: none; cursor: pointer; margin-left: 16px;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.nav-cta:hover { background: var(--sienna-mid); }
+.nav-hamburger { display: none; }
+
+/* ── PAGES ── */
+.page { display: none; }
+.page.visible { display: block; }
+
+/* ── SHARED ── */
+.section { padding: 96px 48px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sienna-mid);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+}
+.eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--sienna-mid); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px); font-weight: 300;
+  line-height: 1.08; letter-spacing: -0.01em;
+  color: var(--green-deep); margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--sienna); }
+.section-body {
+  font-size: 17px; line-height: 1.8;
+  color: var(--text-secondary); max-width: 620px;
+}
+
+/* ══════════════════════════════════
+   HOME PAGE
+══════════════════════════════════ */
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: var(--green-deep);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 64px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 75% 50%, rgba(139,58,20,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-left {
+  padding: 80px 64px 80px 80px;
+  display: flex; flex-direction: column;
+  justify-content: center; position: relative; z-index: 2;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 40px; padding: 6px 16px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--green-pale);
+  margin-bottom: 36px; width: fit-content;
+}
+.hero-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sienna-light);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(46px, 6vw, 82px);
+  font-weight: 300; line-height: 1.0;
+  letter-spacing: -0.02em; color: var(--cream);
+  margin-bottom: 28px;
+}
+.hero-title em {
+  font-style: italic; color: var(--sienna-light);
+  display: block;
+}
+.hero-text {
+  font-size: 17px; color: rgba(248,244,237,0.6);
+  line-height: 1.75; max-width: 440px; margin-bottom: 44px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  font-size: 14px; font-weight: 500;
+  background: var(--sienna); color: var(--cream);
+  padding: 14px 28px; border-radius: 8px;
+  border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s; text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { background: var(--sienna-mid); transform: translateY(-1px); }
+.btn-ghost {
+  font-size: 14px; font-weight: 500;
+  background: transparent; color: rgba(248,244,237,0.7);
+  padding: 14px 28px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.14); cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.btn-ghost:hover { color: var(--cream); border-color: rgba(255,255,255,0.3); }
+
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 48px;
+}
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 40px;
+  max-width: 380px; width: 100%;
+  backdrop-filter: blur(8px);
+}
+.hc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sienna-light);
+  margin-bottom: 24px;
+}
+.hc-method { display: flex; flex-direction: column; gap: 16px; }
+.hc-stage {
+  display: flex; align-items: center; gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hc-stage:last-child { border-bottom: none; padding-bottom: 0; }
+.hc-stage-num {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 300; color: var(--sienna-light);
+  flex-shrink: 0;
+}
+.hc-stage-word {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-style: italic; font-weight: 300;
+  color: var(--cream); line-height: 1;
+}
+.hc-stage-desc {
+  font-size: 12px; color: rgba(248,244,237,0.4);
+  margin-top: 2px;
+}
+
+/* Trust strip */
+.trust-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 48px;
+  display: flex; align-items: center; gap: 40px;
+  flex-wrap: wrap;
+}
+.ts-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+  flex-shrink: 0;
+}
+.ts-items { display: flex; gap: 32px; flex-wrap: wrap; }
+.ts-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text-secondary);
+}
+.ts-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--sienna-light); }
+
+/* For who section */
+.for-who { background: var(--cream); }
+.fw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-top: 52px;
+}
+.fw-card {
+  background: var(--white);
+  padding: 36px 32px;
+  position: relative; overflow: hidden;
+  transition: transform 0.2s;
+}
+.fw-card:hover { transform: translateY(-3px); }
+.fw-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-accent), var(--sienna-light));
+}
+.fw-icon { font-size: 28px; margin-bottom: 16px; }
+.fw-who {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; font-style: italic;
+  color: var(--green-deep); margin-bottom: 10px; line-height: 1.2;
+}
+.fw-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* Method preview */
+.method-preview { background: var(--green-deep); padding: 96px 48px; }
+.mp-inner { max-width: 1100px; margin: 0 auto; }
+.mp-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sienna-light);
+  margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+}
+.mp-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--sienna-light); }
+.mp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px); font-weight: 300;
+  font-style: italic; color: var(--cream); line-height: 1.08;
+  margin-bottom: 56px; letter-spacing: -0.01em;
+}
+.mp-stages {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; overflow: hidden;
+}
+.mp-stage {
+  background: var(--green-deep);
+  padding: 32px 24px;
+  transition: background 0.2s;
+}
+.mp-stage:hover { background: var(--green-mid); }
+.mp-stage-num {
+  font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(248,244,237,0.3);
+  margin-bottom: 16px;
+}
+.mp-stage-word {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-style: italic; font-weight: 300;
+  color: var(--cream); line-height: 1; margin-bottom: 10px;
+}
+.mp-stage-desc {
+  font-size: 13px; color: rgba(248,244,237,0.45); line-height: 1.6;
+}
+
+/* Testimonials */
+.testimonials { background: var(--sienna-pale); padding: 96px 48px; }
+.t-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-top: 52px;
+}
+.t-card {
+  background: var(--white); border-radius: 16px;
+  padding: 32px; position: relative;
+}
+.t-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-style: italic; font-weight: 300;
+  color: var(--green-deep); line-height: 1.7; margin-bottom: 24px;
+}
+.t-quote::before {
+  content: '"';
+  font-size: 64px; color: var(--sienna-pale);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 0; vertical-align: -0.4em; margin-right: 4px;
+}
+.t-attr { font-size: 12px; color: var(--text-muted); }
+.t-attr strong { color: var(--text-secondary); font-weight: 500; font-size: 13px; display: block; margin-bottom: 2px; }
+
+/* Home CTA */
+.home-cta {
+  background: var(--cream-deep); padding: 96px 48px; text-align: center;
+}
+.home-cta-inner { max-width: 640px; margin: 0 auto; }
+.home-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px); font-weight: 300;
+  line-height: 1.15; color: var(--green-deep); margin-bottom: 20px;
+}
+.home-cta-title em { font-style: italic; color: var(--sienna); }
+.home-cta-text { font-size: 16px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 36px; }
+.btn-dark {
+  font-size: 14px; font-weight: 500;
+  background: var(--green-deep); color: var(--cream);
+  padding: 16px 32px; border-radius: 8px;
+  border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s; text-decoration: none; display: inline-block;
+}
+.btn-dark:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+/* ══════════════════════════════════
+   ABOUT PAGE
+══════════════════════════════════ */
+.about-hero {
+  background: var(--ink);
+  padding: 160px 48px 96px;
+  min-height: 60vh;
+  display: flex; align-items: flex-end;
+}
+.ah-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+.ah-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sienna-light);
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.ah-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--sienna-light); }
+.ah-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 76px); font-weight: 300;
+  line-height: 1.05; color: var(--cream); letter-spacing: -0.02em;
+}
+.ah-title em { font-style: italic; color: var(--sienna-light); display: block; }
+
+.about-story { background: var(--white); padding: 96px 48px; }
+.as-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.as-left { }
+.as-photo-placeholder {
+  background: var(--green-wash);
+  border-radius: 16px; aspect-ratio: 3/4;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic;
+  color: var(--green-accent); border: 1px solid var(--border);
+  max-height: 500px; overflow: hidden;
+}
+.as-photo-placeholder img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  display: block;
+}
+.as-right { }
+.as-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 300; line-height: 1.15;
+  color: var(--green-deep); margin-bottom: 28px;
+}
+.as-body p {
+  font-size: 16px; color: var(--text-secondary);
+  line-height: 1.8; margin-bottom: 20px;
+}
+.as-body strong { color: var(--text-body); font-weight: 500; }
+
+.about-pull {
+  border-left: 3px solid var(--sienna-light);
+  padding: 4px 0 4px 24px; margin: 32px 0;
+}
+.about-pull p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-style: italic; color: var(--green-deep); line-height: 1.45;
+}
+
+.credentials-strip {
+  background: var(--cream-deep); padding: 56px 48px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.cred-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px; }
+.cred-item { }
+.cred-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sienna-mid); margin-bottom: 8px; }
+.cred-value { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--green-deep); line-height: 1.35; }
+
+.about-philosophy { background: var(--green-deep); padding: 96px 48px; }
+.ap-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.ap-card { background: rgba(255,255,255,0.05); border-radius: 14px; padding: 28px; border: 1px solid rgba(255,255,255,0.06); }
+.ap-icon { font-size: 24px; margin-bottom: 14px; }
+.ap-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--cream); margin-bottom: 10px; }
+.ap-text { font-size: 13px; color: rgba(248,244,237,0.5); line-height: 1.7; }
+
+/* ══════════════════════════════════
+   SERVICES PAGE
+══════════════════════════════════ */
+.services-hero {
+  background: var(--cream-deep);
+  padding: 160px 48px 80px;
+}
+.sh-inner { max-width: 1100px; margin: 0 auto; }
+
+.services-section { background: var(--white); padding: 80px 48px; }
+.srv-inner { max-width: 1100px; margin: 0 auto; }
+
+.srv-type-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-muted); margin: 56px 0 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.srv-type-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+.srv-type-label:first-of-type { margin-top: 0; }
+
+.srv-card {
+  border: 1px solid var(--border); border-radius: 16px;
+  overflow: hidden; margin-bottom: 16px;
+  display: grid; grid-template-columns: 1fr auto;
+}
+.srv-card-left { padding: 32px 36px; }
+.srv-card-right {
+  background: var(--green-deep);
+  padding: 32px 36px; display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-end; min-width: 220px;
+}
+.srv-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--sienna-mid); margin-bottom: 10px;
+}
+.srv-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; font-style: italic;
+  color: var(--green-deep); margin-bottom: 10px; line-height: 1.2;
+}
+.srv-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin-bottom: 14px; }
+.srv-includes { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+.srv-price-label { font-size: 11px; color: rgba(248,244,237,0.4); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+.srv-price { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--cream); line-height: 1; margin-bottom: 4px; }
+.srv-price-note { font-size: 12px; color: rgba(248,244,237,0.4); margin-bottom: 20px; }
+.srv-btn {
+  background: var(--sienna); color: var(--cream); font-size: 13px; font-weight: 500;
+  padding: 10px 20px; border-radius: 7px; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; white-space: nowrap;
+  transition: background 0.2s; text-decoration: none; display: inline-block;
+}
+.srv-btn:hover { background: var(--sienna-mid); }
+.srv-btn-outline {
+  background: transparent; color: rgba(248,244,237,0.7);
+  border: 1px solid rgba(255,255,255,0.15); font-size: 13px; font-weight: 500;
+  padding: 10px 20px; border-radius: 7px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; white-space: nowrap;
+  transition: all 0.2s; text-decoration: none; display: inline-block; margin-top: 8px;
+}
+.srv-btn-outline:hover { color: var(--cream); border-color: rgba(255,255,255,0.3); }
+
+.srv-featured { border-color: var(--sienna-light); }
+.srv-featured .srv-card-left { background: var(--sienna-pale); }
+
+.disclaimer-box {
+  background: var(--cream-deep); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 24px; margin-top: 40px;
+}
+.db-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.db-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+/* ══════════════════════════════════
+   BOOKING PAGE
+══════════════════════════════════ */
+.booking-page { background: var(--cream); }
+.booking-hero {
+  background: var(--ink); padding: 140px 48px 80px;
+}
+.bh-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.bh-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 62px); font-weight: 300;
+  color: var(--cream); line-height: 1.1; letter-spacing: -0.01em;
+}
+.bh-title em { font-style: italic; color: var(--sienna-light); }
+.bh-text { font-size: 16px; color: rgba(248,244,237,0.55); line-height: 1.75; margin-top: 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; }
+.bh-steps { display: flex; flex-direction: column; gap: 20px; }
+.bh-step { display: flex; gap: 16px; align-items: flex-start; }
+.bhs-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--sienna-light);
+}
+.bhs-content { flex: 1; padding-top: 6px; }
+.bhs-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 3px; }
+.bhs-desc { font-size: 13px; color: rgba(248,244,237,0.45); line-height: 1.6; }
+
+.booking-section { background: var(--white); padding: 80px 48px; }
+.bs-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+
+.discovery-card {
+  background: var(--green-deep); border-radius: 20px; padding: 44px;
+  position: relative; overflow: hidden;
+}
+.discovery-card::after {
+  content: 'START HERE'; position: absolute; right: -32px; top: 28px;
+  background: var(--sienna); color: var(--cream);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  padding: 6px 34px; transform: rotate(45deg) translateX(20px);
+}
+.dc-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sienna-light); margin-bottom: 16px; }
+.dc-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; font-style: italic; color: var(--cream); margin-bottom: 14px; line-height: 1.2; }
+.dc-text { font-size: 14px; color: rgba(248,244,237,0.6); line-height: 1.75; margin-bottom: 28px; }
+.dc-details { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.dc-detail { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(248,244,237,0.55); }
+.dc-icon { font-size: 16px; }
+.dc-btn {
+  background: var(--sienna); color: var(--cream); font-size: 14px; font-weight: 500;
+  padding: 14px 28px; border-radius: 8px; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; width: 100%; text-align: center;
+  transition: background 0.2s; display: block; text-decoration: none;
+}
+.dc-btn:hover { background: var(--sienna-mid); }
+
+.booking-right { }
+.booking-form-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px;
+}
+.intake-note {
+  background: var(--green-wash); border: 1px solid var(--green-pale);
+  border-radius: 12px; padding: 20px 22px; margin-bottom: 24px;
+}
+.in-title { font-size: 14px; font-weight: 500; color: var(--green-deep); margin-bottom: 6px; }
+.in-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+.form-group { margin-bottom: 18px; }
+.form-label { font-size: 13px; font-weight: 500; color: var(--text-body); margin-bottom: 7px; display: block; }
+.form-input {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 14px; font-family: 'DM Sans', sans-serif;
+  color: var(--text-body); background: var(--white);
+  transition: border-color 0.2s; outline: none;
+}
+.form-input:focus { border-color: var(--green-accent); }
+.form-select { appearance: none; }
+.form-textarea { min-height: 100px; resize: vertical; }
+.form-submit {
+  width: 100%; background: var(--green-deep); color: var(--cream);
+  font-size: 14px; font-weight: 500; padding: 14px;
+  border-radius: 8px; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: background 0.2s; margin-top: 8px;
+}
+.form-submit:hover { background: var(--green-mid); }
+.form-note { font-size: 12px; color: var(--text-muted); margin-top: 10px; line-height: 1.6; }
+
+/* Calendar embed placeholder */
+.calendar-placeholder {
+  background: var(--green-wash); border: 1px dashed var(--green-pale);
+  border-radius: 12px; padding: 40px; text-align: center;
+  margin-top: 20px;
+}
+.cp-icon { font-size: 32px; margin-bottom: 12px; }
+.cp-title { font-size: 15px; font-weight: 500; color: var(--green-deep); margin-bottom: 6px; }
+.cp-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ══════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════ */
+.contact-hero {
+  background: var(--sienna); padding: 140px 48px 80px;
+}
+.ch-inner { max-width: 1100px; margin: 0 auto; }
+.ch-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 72px); font-weight: 300;
+  color: var(--cream); line-height: 1.05; letter-spacing: -0.02em;
+}
+.ch-title em { font-style: italic; display: block; }
+.ch-sub { font-size: 18px; color: rgba(248,244,237,0.65); margin-top: 18px; max-width: 520px; line-height: 1.7; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+.contact-body { background: var(--white); padding: 80px 48px; }
+.cb-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.contact-form-side { }
+.contact-info-side { }
+
+.contact-info-card {
+  background: var(--cream-deep); border-radius: 16px; padding: 36px;
+  margin-bottom: 20px;
+}
+.cic-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sienna-mid); margin-bottom: 14px; }
+.cic-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--green-deep); margin-bottom: 10px; }
+.cic-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+.corporate-card {
+  background: var(--green-deep); border-radius: 16px; padding: 36px;
+}
+.cc-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sienna-light); margin-bottom: 14px; }
+.cc-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--cream); margin-bottom: 10px; }
+.cc-text { font-size: 14px; color: rgba(248,244,237,0.55); line-height: 1.7; margin-bottom: 20px; }
+.cc-btn {
+  background: var(--sienna); color: var(--cream); font-size: 13px; font-weight: 500;
+  padding: 11px 22px; border-radius: 7px; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: background 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.cc-btn:hover { background: var(--sienna-mid); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--ink); padding: 60px 48px 40px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400;
+  color: var(--cream); margin-bottom: 10px;
+}
+.footer-brand-desc { font-size: 13px; color: rgba(248,244,237,0.4); line-height: 1.7; max-width: 260px; }
+.footer-col-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,244,237,0.3); margin-bottom: 16px; }
+.footer-link { display: block; font-size: 14px; color: rgba(248,244,237,0.5); margin-bottom: 10px; cursor: pointer; text-decoration: none; }
+.footer-link:hover { color: var(--cream); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+.footer-copy { font-size: 12px; color: rgba(248,244,237,0.25); }
+.footer-disclaimer { font-size: 12px; color: rgba(248,244,237,0.2); max-width: 500px; line-height: 1.5; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 80px 32px 60px; }
+  .fw-grid { grid-template-columns: 1fr; }
+  .mp-stages { grid-template-columns: 1fr; }
+  .t-grid { grid-template-columns: 1fr; }
+  .section { padding: 64px 24px; }
+  .as-inner, .bh-inner, .bs-inner, .cb-inner { grid-template-columns: 1fr; }
+  .cred-inner { grid-template-columns: 1fr 1fr; }
+  .ap-inner { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .about-hero, .booking-hero, .services-hero { padding: 120px 24px 60px; }
+  .trust-strip { padding: 20px 24px; }
+  .srv-card { grid-template-columns: 1fr; }
+  .srv-card-right { min-width: unset; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    The Adufe Practice
+    <span class="nav-logo-sep"></span>
+    <span class="nav-logo-sub">Mental Wellness</span>
+  </a>
+  <div class="nav-links">
+    <button class="nav-link" onclick="showPage('about')">About</button>
+    <button class="nav-link" onclick="showPage('services')">Services</button>
+    <button class="nav-link" onclick="showPage('contact')">Contact</button>
+    <button class="nav-cta" onclick="showPage('booking')">Book a session</button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<div class="page visible" id="page-home">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Now accepting clients
+      </div>
+      <h1 class="hero-title">
+        Where you stop<br>
+        surviving<br>
+        <em>and start building.</em>
+      </h1>
+      <p class="hero-text">Trauma-informed support for individuals and organisations ready to do the real work.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('booking')">Book your discovery session</button>
+        <button class="btn-ghost" onclick="showPage('services')">Explore services</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <p class="hc-label">The Adufe Method</p>
+        <div class="hc-method">
+          <div class="hc-stage">
+            <div class="hc-stage-num">I</div>
+            <div><div class="hc-stage-word">Witness</div><div class="hc-stage-desc">See yourself clearly</div></div>
+          </div>
+          <div class="hc-stage">
+            <div class="hc-stage-num">II</div>
+            <div><div class="hc-stage-word">Name</div><div class="hc-stage-desc">Give language to what you carry</div></div>
+          </div>
+          <div class="hc-stage">
+            <div class="hc-stage-num">III</div>
+            <div><div class="hc-stage-word">Feel</div><div class="hc-stage-desc">Practice not running</div></div>
+          </div>
+          <div class="hc-stage">
+            <div class="hc-stage-num">IV</div>
+            <div><div class="hc-stage-word">Choose</div><div class="hc-stage-desc">Build a self that belongs to you</div></div>
+          </div>
+          <div class="hc-stage">
+            <div class="hc-stage-num">V</div>
+            <div><div class="hc-stage-word">Build</div><div class="hc-stage-desc">From healing to creating</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust-strip">
+    <span class="ts-label">About this practice</span>
+    <div class="ts-items">
+      <div class="ts-item"><span class="ts-dot"></span>Trauma-informed support</div>
+      <div class="ts-item"><span class="ts-dot"></span>Diploma in Psychodynamic Psychotherapy</div>
+      <div class="ts-item"><span class="ts-dot"></span>WHO Mental Health & Human Rights trained</div>
+      <div class="ts-item"><span class="ts-dot"></span>1+ year supervised clinical experience</div>
+      <div class="ts-item"><span class="ts-dot"></span>Zoom or Google Meet (WAT) · Abuja-based</div>
+      <div class="ts-item"><span class="ts-dot"></span>Individuals & organisations</div>
+    </div>
+  </div>
+
+  <!-- For who -->
+  <div class="for-who section">
+    <div class="section-inner">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="section-title">This practice was built<br>for <em>three people.</em></h2>
+      <div class="fw-grid">
+        <div class="fw-card">
+          <div class="fw-icon">🌿</div>
+          <p class="fw-who">The trauma survivor ready to rebuild</p>
+          <p class="fw-desc">You have survived something significant. You function — sometimes brilliantly. And you are exhausted by the distance between the life you're living and the one you know is possible. You are ready to close that distance.</p>
+        </div>
+        <div class="fw-card">
+          <div class="fw-icon">🔥</div>
+          <p class="fw-who">The high-achiever falling apart beneath the surface</p>
+          <p class="fw-desc">From the outside, everything looks fine. Inside, you are carrying a weight that no amount of productivity, success, or performance can touch. You know something needs to change. You just don't yet know how.</p>
+        </div>
+        <div class="fw-card">
+          <div class="fw-icon">🏛</div>
+          <p class="fw-who">The organisation that takes its people seriously</p>
+          <p class="fw-desc">You understand that your team's wellbeing is not separate from your organisation's performance. Drawing on a systems thinking approach, I work with you to build the structures and culture where people can be present, honest, and genuinely well — not just functional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method preview -->
+  <div class="method-preview">
+    <div class="mp-inner">
+      <p class="mp-eyebrow">The framework</p>
+      <h2 class="mp-title">Five stages. One direction.<br>Toward the whole self.</h2>
+      <div class="mp-stages">
+        <div class="mp-stage">
+          <p class="mp-stage-num">Stage I</p>
+          <p class="mp-stage-word">Witness</p>
+          <p class="mp-stage-desc">Before anything can change, it must be seen — clearly, without flinching, with full compassion.</p>
+        </div>
+        <div class="mp-stage">
+          <p class="mp-stage-num">Stage II</p>
+          <p class="mp-stage-word">Name</p>
+          <p class="mp-stage-desc">Language is medicine. Giving precise words to what you carry shifts everything.</p>
+        </div>
+        <div class="mp-stage">
+          <p class="mp-stage-num">Stage III</p>
+          <p class="mp-stage-word">Feel</p>
+          <p class="mp-stage-desc">You cannot think your way through feelings that were felt into you. We go through, not around.</p>
+        </div>
+        <div class="mp-stage">
+          <p class="mp-stage-num">Stage IV</p>
+          <p class="mp-stage-word">Choose</p>
+          <p class="mp-stage-desc">In the space that healing creates, you begin to consciously design the self you are becoming.</p>
+        </div>
+        <div class="mp-stage">
+          <p class="mp-stage-num">Stage V</p>
+          <p class="mp-stage-word">Build</p>
+          <p class="mp-stage-desc">Healing is not the destination. It is the foundation. This is where you begin to create.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials section">
+    <div class="section-inner">
+      <p class="eyebrow">From those who have done this work</p>
+      <h2 class="section-title">What people say<br><em>after.</em></h2>
+      <div class="t-grid">
+        <div class="t-card">
+          <p class="t-quote">I had been to therapy before but this felt different. Like I was finally being seen by someone who understood from the inside what I had been carrying. For the first time in years, I felt like healing was actually possible.</p>
+          <div class="t-attr"><strong>O.A., Lagos</strong>Professional · Individual client</div>
+        </div>
+        <div class="t-card">
+          <p class="t-quote">The sessions gave me language for things I had been living for decades without being able to name. That naming changed something fundamental. I left each session feeling like I understood myself a little more than I did before.</p>
+          <div class="t-attr"><strong>Anonymous</strong>Educator · Individual client</div>
+        </div>
+        <div class="t-card">
+          <p class="t-quote">Our team Lunch and Learn session opened a conversation we had not been able to have before. The level of care and expertise that Adufe brought to our specific context was evident from the first minute.</p>
+          <div class="t-attr"><strong>HR Director</strong>Financial services firm · Corporate client</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="home-cta">
+    <div class="home-cta-inner">
+      <h2 class="home-cta-title">The first step is the<br>only step you have to<br><em>take today.</em></h2>
+      <p class="home-cta-text">A focused 30-minute discovery session — ₦10,000 (Nigeria) or $10 (international). No long-term commitment, no pressure. Just an honest conversation about where you are and whether this practice is the right fit for where you want to go.</p>
+      <button class="btn-dark" onclick="showPage('booking')">Book your discovery session</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <p class="footer-brand-name">The Adufe Practice</p>
+          <p class="footer-brand-desc">Trauma-informed support for individuals and organisations ready to move from surviving to building.</p>
+        </div>
+        <div>
+          <p class="footer-col-label">Navigate</p>
+          <a class="footer-link" onclick="showPage('about')">About Adufe</a>
+          <a class="footer-link" onclick="showPage('services')">Services & pricing</a>
+          <a class="footer-link" onclick="showPage('booking')">Book a session</a>
+          <a class="footer-link" onclick="showPage('contact')">Contact</a>
+        </div>
+        <div>
+          <p class="footer-col-label">Connect</p>
+          <a class="footer-link" href="https://www.instagram.com/with_adufe?igsh=ZGJmbWRpdjN2eWgx" target="_blank" rel="noopener">Instagram — @with_adufe</a>
+          <a class="footer-link" href="https://www.linkedin.com/in/esther-adufe-omoyele-3a4b81188/" target="_blank" rel="noopener">LinkedIn — Esther Adufe Omoyele</a>
+          <a class="footer-link" href="https://youtube.com/@with_adufe?si=vF23jeR9P4ZyPtMy" target="_blank" rel="noopener">YouTube — @with_adufe</a>
+          <a class="footer-link" href="https://substack.com/@adufeee?utm_source=share&utm_medium=android&r=1zfpif" target="_blank" rel="noopener">Substack — The Adufe Letter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 The Adufe Practice · Esther "Adufe" Omoyele</p>
+        <p class="footer-disclaimer">This practice offers trauma-informed support sessions. Sessions are not psychotherapy or clinical treatment. If you require clinical or psychiatric support, please consult a qualified mental health professional.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<div class="page" id="page-about">
+
+  <div class="about-hero">
+    <div class="ah-inner">
+      <p class="ah-eyebrow">About this practice</p>
+      <h1 class="ah-title">I built this<br>because I needed<br><em>it to exist.</em></h1>
+    </div>
+  </div>
+
+  <div class="about-story">
+    <div class="as-inner">
+      <div class="as-left">
+        <div class="as-photo-placeholder">
+          <img src="adufe-photo.jpg" alt="Esther &quot;Adufe&quot; Omoyele">
+        </div>
+      </div>
+      <div class="as-right">
+        <h2 class="as-title">Esther "Adufe" Omoyele</h2>
+        <div class="as-body">
+          <p>I am a trauma-informed support practitioner, mental wellness educator, and storyteller based in Abuja, Nigeria. I hold a Diploma in Psychodynamic Psychotherapy and have completed WHO training in Mental Health, Human Rights and Recovery. My practice is grounded in a systems thinking approach, alongside over a year of supervised clinical experience through direct support work.</p>
+
+          <p>I came to this work through the long, nonlinear, deeply personal route of having lived what I now teach. I am a trauma survivor. I know what it costs to keep functioning while something important goes unaddressed. I know the particular exhaustion of performing wellness rather than practicing it. I know what it feels like to understand your patterns intellectually while remaining, on a felt level, unable to change them.</p>
+
+          <div class="about-pull">
+            <p>I built this practice because I needed something like it to exist — and because I believe that the people of this world, regardless of where they are, deserve access to this quality of support.</p>
+          </div>
+
+          <p>My work draws from trauma-informed therapy, somatic practice, attachment theory, identity psychology, and a deeply African understanding of wellbeing — the knowledge that healing is not individual. It is relational, communal, and purposeful.</p>
+
+          <p>I am also a screenwriter, storyteller, and researcher. My screenwriting has been acknowledged both at home and internationally. I have contributed to international mental health research as a field team lead in Nigeria. And I write weekly in The Adufe Letter — a newsletter read by people in over twenty countries.</p>
+
+          <p>All of these things are part of the same work: helping people understand themselves, articulate their experience, and build lives that are genuinely theirs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="credentials-strip">
+    <div class="cred-inner">
+      <div class="cred-item">
+        <p class="cred-label">Training</p>
+        <p class="cred-value">Diploma in Psychodynamic Psychotherapy</p>
+      </div>
+      <div class="cred-item">
+        <p class="cred-label">Human rights training</p>
+        <p class="cred-value">WHO Mental Health, Human Rights & Recovery Programme</p>
+      </div>
+      <div class="cred-item">
+        <p class="cred-label">Approach</p>
+        <p class="cred-value">Systems thinking & trauma-informed practice</p>
+      </div>
+      <div class="cred-item">
+        <p class="cred-label">Clinical experience</p>
+        <p class="cred-value">1+ year supervised clinical practice · NGO counselling</p>
+      </div>
+      <div class="cred-item">
+        <p class="cred-label">Academic background</p>
+        <p class="cred-value">BA Creative Arts (Music) · University of Lagos</p>
+      </div>
+      <div class="cred-item">
+        <p class="cred-label">Research</p>
+        <p class="cred-value">Research Associate · ICRW · Mastercard Foundation-funded study</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-philosophy section" style="background:var(--green-deep)">
+    <div class="section-inner">
+      <p class="mp-eyebrow">What I believe</p>
+      <h2 class="mp-title">The philosophy<br>behind the practice.</h2>
+      <div class="ap-inner">
+        <div class="ap-card">
+          <div class="ap-icon">🌱</div>
+          <p class="ap-title">Healing is not the destination</p>
+          <p class="ap-text">It is the foundation. People do not heal so that they can stop — they heal so that they can finally begin. Every piece of work I do is oriented toward what becomes possible on the other side of it.</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-icon">🤝</div>
+          <p class="ap-title">Healing is relational</p>
+          <p class="ap-text">You cannot fully heal alone. The quality of the relationship between practitioner and client is not incidental to the work — it is the work. I bring my whole self to this, not a clinical persona.</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-icon">🌍</div>
+          <p class="ap-title">Lived experience is expertise</p>
+          <p class="ap-text">I do not approach trauma from the outside. I bring my own years of navigating it — personally and professionally — as a form of knowledge that academic training alone cannot produce.</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-icon">🗣</div>
+          <p class="ap-title">Language is medicine</p>
+          <p class="ap-text">You cannot heal what you cannot name. A significant part of the work I do is giving precise, honest language to experiences that have been lived without words — and watching what shifts when people finally have them.</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-icon">🔒</div>
+          <p class="ap-title">Transparency is non-negotiable</p>
+          <p class="ap-text">I disclose my training and scope of practice clearly. I work under supervision and maintain clear referral pathways. I will always tell you exactly what I can and cannot offer — because the trust between us is the foundation of everything else.</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-icon">✦</div>
+          <p class="ap-title">You already have what you need</p>
+          <p class="ap-text">I do not fix people. I create conditions — through presence, through honest support, through a structured framework — in which people can access the wholeness that was always already there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Referral pathways -->
+  <div class="section" style="background:var(--white)">
+    <div class="section-inner">
+      <p class="eyebrow">Referral pathways</p>
+      <h2 class="section-title">When you need more<br>than this practice can offer.</h2>
+      <p class="section-body">Trauma-informed support has real limits — it is not a substitute for clinical or psychiatric care. If, during our work together, it becomes clear that you need diagnosis, medication, or a higher level of clinical care, I will say so directly and help you find the right door. Below are organisations I trust for referrals in Nigeria, alongside guidance for clients based elsewhere.</p>
+
+      <div class="credentials-strip" style="border-radius:16px;margin-top:40px;border:1px solid var(--border)">
+        <div class="cred-inner" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="cred-item">
+            <p class="cred-label">Crisis & counselling support</p>
+            <p class="cred-value" style="font-size:16px">Mentally Aware Nigeria Initiative (MANI) — 24/7 free, confidential crisis support and referral to therapy for young people across Nigeria.</p>
+          </div>
+          <div class="cred-item">
+            <p class="cred-label">Crisis & counselling support</p>
+            <p class="cred-value" style="font-size:16px">She Writes Woman — 24/7 toll-free helpline (0800 800 2000) and teletherapy for anyone in Nigeria.</p>
+          </div>
+          <div class="cred-item">
+            <p class="cred-label">Clinical / psychiatric care</p>
+            <p class="cred-value" style="font-size:16px">Federal Neuropsychiatric Hospital, Yaba, Lagos — federal psychiatric hospital for in-person diagnosis and treatment.</p>
+          </div>
+          <div class="cred-item">
+            <p class="cred-label">Clinical / psychiatric care</p>
+            <p class="cred-value" style="font-size:16px">Lagos University Teaching Hospital (LUTH), Department of Psychiatry, Idi-Araba — teaching hospital psychiatric care.</p>
+          </div>
+          <div class="cred-item">
+            <p class="cred-label">Telepsychiatry & medication management</p>
+            <p class="cred-value" style="font-size:16px">Happy Family Hospital — telepsychiatry serving all 36 states plus Nigerians abroad, with in-person clinics in Lagos and Abuja.</p>
+          </div>
+          <div class="cred-item">
+            <p class="cred-label">International clients</p>
+            <p class="cred-value" style="font-size:16px">Please seek a licensed therapist or psychiatrist registered in your own country — for example, through a national or regional professional directory, your health insurer, or your primary care doctor. I am glad to help you think through what to look for, even if I cannot make the referral myself.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:13px;color:var(--text-muted);margin-top:24px;line-height:1.7">If you are in immediate danger or crisis, please contact your local emergency services or the nearest hospital emergency department right away.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><p class="footer-brand-name">The Adufe Practice</p><p class="footer-brand-desc">Trauma-informed support for individuals and organisations.</p></div>
+        <div><p class="footer-col-label">Navigate</p><a class="footer-link" onclick="showPage('home')">Home</a><a class="footer-link" onclick="showPage('services')">Services</a><a class="footer-link" onclick="showPage('booking')">Book</a><a class="footer-link" onclick="showPage('contact')">Contact</a></div>
+        <div><p class="footer-col-label">Connect</p><a class="footer-link" href="https://www.instagram.com/with_adufe?igsh=ZGJmbWRpdjN2eWgx" target="_blank" rel="noopener">Instagram</a><a class="footer-link" href="https://www.linkedin.com/in/esther-adufe-omoyele-3a4b81188/" target="_blank" rel="noopener">LinkedIn</a><a class="footer-link" href="https://youtube.com/@with_adufe?si=vF23jeR9P4ZyPtMy" target="_blank" rel="noopener">YouTube</a><a class="footer-link" href="https://substack.com/@adufeee?utm_source=share&utm_medium=android&r=1zfpif" target="_blank" rel="noopener">Substack</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 The Adufe Practice</p>
+        <p class="footer-disclaimer">Sessions are not psychotherapy or clinical treatment. If you require clinical support, please consult a qualified mental health professional.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════ SERVICES ═══════════════════ -->
+<div class="page" id="page-services">
+
+  <div class="services-hero section" style="background:var(--cream-deep);padding:140px 48px 80px">
+    <div class="sh-inner">
+      <p class="eyebrow">Services & pricing</p>
+      <h1 class="section-title">Support that meets<br>you where you are —<br><em>and takes you further.</em></h1>
+      <p class="section-body">Every offering is built around the Adufe Method — a structured, five-stage framework for moving from surviving to building. Choose the depth of support that is right for where you are right now.</p>
+    </div>
+  </div>
+
+  <div class="services-section">
+    <div class="srv-inner">
+
+      <p class="srv-type-label">Individual support</p>
+
+      <!-- Discovery -->
+      <div class="srv-card">
+        <div class="srv-card-left">
+          <p class="srv-tag">Entry point · New clients only · 30 minutes</p>
+          <h3 class="srv-name">Discovery Session</h3>
+          <p class="srv-desc">A 30-minute conversation to assess fit, clarify what you are looking for, and determine whether the Adufe Practice is the right space for your specific needs. This is not a taster session — it is a professional intake conversation. You will leave knowing whether we should work together.</p>
+          <p class="srv-includes">✓ 30 minutes via Zoom or Google Meet &nbsp;·&nbsp; ✓ Intake form beforehand &nbsp;·&nbsp; ✓ No obligation to continue</p>
+        </div>
+        <div class="srv-card-right">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦10,000</p>
+          <p class="srv-price-note">or $10 international · one per new client</p>
+          <button class="srv-btn" onclick="showPage('booking')">Book now</button>
+        </div>
+      </div>
+
+      <!-- Single session -->
+      <div class="srv-card">
+        <div class="srv-card-left">
+          <p class="srv-tag">Individual · 60 minutes</p>
+          <h3 class="srv-name">Single Support Session</h3>
+          <p class="srv-desc">A structured 60-minute support session following the Adufe Method framework. Each session has a clear container: opening check-in, focused exploration, a closing integration practice, and a brief reflection and homework prompt. Designed for clients who want to work on a specific area or who are new to this kind of support.</p>
+          <p class="srv-includes">✓ 60 min via Zoom or Google Meet &nbsp;·&nbsp; ✓ Session notes shared after &nbsp;·&nbsp; ✓ One follow-up email prompt</p>
+        </div>
+        <div class="srv-card-right">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦45,000</p>
+          <p class="srv-price-note">or $50 international · per session</p>
+          <button class="srv-btn" onclick="showPage('booking')">Book now</button>
+        </div>
+      </div>
+
+      <!-- Intensive -->
+      <div class="srv-card srv-featured">
+        <div class="srv-card-left">
+          <p class="srv-tag">Flagship · 6 sessions · Limited availability</p>
+          <h3 class="srv-name">The Adufe Method Intensive</h3>
+          <p class="srv-desc">Six structured sessions over six weeks — one session per stage of the Adufe Method, culminating in a closing integration session. This is the deepest level of individual work available in this practice. First cohort is limited to five clients. Application-based.</p>
+          <p class="srv-includes" style="margin-bottom:10px">✓ 6 × 60-min sessions via Zoom or Google Meet &nbsp;·&nbsp; ✓ The Whole Self Workbook included (first edition) &nbsp;·&nbsp; ✓ WhatsApp support between sessions &nbsp;·&nbsp; ✓ Session notes and reflections after each session &nbsp;·&nbsp; ✓ Closing integration review</p>
+          <div style="background:rgba(139,58,20,0.08);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--sienna);font-weight:500">First cohort: 5 places only. Applications reviewed individually.</div>
+        </div>
+        <div class="srv-card-right" style="background:var(--sienna)">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦200,000</p>
+          <p class="srv-price-note">or $220 international · 6-week programme</p>
+          <button class="srv-btn" onclick="showPage('booking')" style="background:var(--green-deep)">Apply now</button>
+        </div>
+      </div>
+
+      <!-- Retainer -->
+      <div class="srv-card">
+        <div class="srv-card-left">
+          <p class="srv-tag">Ongoing · Monthly commitment · 60 minutes per session</p>
+          <h3 class="srv-name">Monthly Retainer</h3>
+          <p class="srv-desc">Two 60-minute sessions per month for clients who want sustained, ongoing support. A minimum three-month commitment creates the continuity that produces the most lasting results. Priority booking and WhatsApp check-ins between sessions. Currently available to a maximum of six clients.</p>
+          <p class="srv-includes">✓ 2 × 60-min sessions/month &nbsp;·&nbsp; ✓ Priority booking &nbsp;·&nbsp; ✓ WhatsApp check-ins between sessions &nbsp;·&nbsp; ✓ 3-month minimum</p>
+        </div>
+        <div class="srv-card-right">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦70,000</p>
+          <p class="srv-price-note">or $75 international · per month</p>
+          <button class="srv-btn" onclick="showPage('booking')">Enquire</button>
+        </div>
+      </div>
+
+      <p class="srv-type-label" style="margin-top:56px">Organisations & corporate</p>
+
+      <!-- Lunch & learn -->
+      <div class="srv-card">
+        <div class="srv-card-left">
+          <p class="srv-tag">Corporate · Entry programme</p>
+          <h3 class="srv-name">Lunch & Learn — Team Wellness Session</h3>
+          <p class="srv-desc">A 90-minute mental wellness session for teams, delivered in-person or virtually. Topics include: Understanding Burnout Beyond the Buzzword, High-Functioning Trauma in the Workplace, Building Trauma-Informed Culture, and The Emotional Intelligence Advantage. A powerful, low-barrier entry point for organisations beginning to take wellbeing seriously.</p>
+          <p class="srv-includes">✓ 90 min in-person, Zoom, or Google Meet &nbsp;·&nbsp; ✓ Slides and resource pack &nbsp;·&nbsp; ✓ Q&A session &nbsp;·&nbsp; ✓ Follow-up resource email to all attendees &nbsp;·&nbsp; ✓ Up to 30 participants</p>
+        </div>
+        <div class="srv-card-right">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦350,000</p>
+          <p class="srv-price-note">or $370 international · per session</p>
+          <button class="srv-btn" onclick="showPage('contact')">Enquire</button>
+        </div>
+      </div>
+
+      <!-- Executive -->
+      <div class="srv-card srv-featured">
+        <div class="srv-card-left">
+          <p class="srv-tag">Corporate · Senior leadership · 60–90 min sessions</p>
+          <h3 class="srv-name">Executive Support Programme</h3>
+          <p class="srv-desc">A structured four-session individual support programme for a senior leader, sold to the organisation. This is not generic executive coaching — it draws on a systems thinking approach to sit with the executive as they build the systems, structures, and rhythms that actually work for them and for what they are building. Framed around performance sustainability, emotional intelligence, and the relationship between a leader's inner world and their professional output. Sessions run 60–90 minutes and are scheduled at a time agreed between the executive and Adufe directly. Fully confidential — no reporting to the employer.</p>
+          <p class="srv-includes">✓ 4 × 60–90 min 1:1 sessions, scheduled by mutual agreement &nbsp;·&nbsp; ✓ Systems-thinking approach to leadership and organisational design &nbsp;·&nbsp; ✓ Adufe Method framework &nbsp;·&nbsp; ✓ Fully confidential &nbsp;·&nbsp; ✓ Closing summary for the executive (not employer)</p>
+        </div>
+        <div class="srv-card-right" style="background:var(--green-deep)">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">₦500,000</p>
+          <p class="srv-price-note">or $530 international · per executive</p>
+          <button class="srv-btn" onclick="showPage('contact')">Enquire</button>
+          <button class="srv-btn-outline" onclick="showPage('contact')">Request proposal</button>
+        </div>
+      </div>
+
+      <!-- Team series -->
+      <div class="srv-card">
+        <div class="srv-card-left">
+          <p class="srv-tag">Corporate · Full programme · Booking now</p>
+          <h3 class="srv-name">Team Wellbeing Workshop Series</h3>
+          <p class="srv-desc">A three-month structured wellbeing programme for teams, grounded in a systems thinking approach to how culture, workload, and support structures interact. Monthly 2-hour workshops, biweekly check-ins for team leads, and a closing assessment report. The most comprehensive corporate offering available from this practice. Pricing is by proposal based on team size and scope.</p>
+          <p class="srv-includes">✓ Monthly 2-hour workshops &nbsp;·&nbsp; ✓ Biweekly team lead check-ins &nbsp;·&nbsp; ✓ Closing assessment report &nbsp;·&nbsp; ✓ Resource library for the team</p>
+        </div>
+        <div class="srv-card-right">
+          <p class="srv-price-label">Investment</p>
+          <p class="srv-price">By proposal</p>
+          <p class="srv-price-note">Based on team size</p>
+          <button class="srv-btn" onclick="showPage('contact')">Request proposal</button>
+        </div>
+      </div>
+
+      <div class="disclaimer-box">
+        <p class="db-label">Important note</p>
+        <p class="db-text">The Adufe Practice offers trauma-informed support sessions — not psychotherapy or clinical treatment. Sessions are facilitated by a trauma-informed support practitioner holding a Diploma in Psychodynamic Psychotherapy and WHO training in Mental Health, Human Rights and Recovery, with over a year of supervised clinical experience. Clients who require clinical or psychiatric support will be referred to appropriate professionals. All sessions are subject to a signed client agreement and intake process prior to commencement. Prices are quoted in Naira for Nigeria-based clients and USD for international clients. Payment is by bank transfer, made in full before a session is confirmed; details are shared once your session is selected. See the full cancellation and rescheduling policy on the Booking page.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><p class="footer-brand-name">The Adufe Practice</p><p class="footer-brand-desc">Trauma-informed support for individuals and organisations.</p></div>
+        <div><p class="footer-col-label">Navigate</p><a class="footer-link" onclick="showPage('home')">Home</a><a class="footer-link" onclick="showPage('about')">About</a><a class="footer-link" onclick="showPage('booking')">Book</a><a class="footer-link" onclick="showPage('contact')">Contact</a></div>
+        <div><p class="footer-col-label">Connect</p><a class="footer-link" href="https://www.instagram.com/with_adufe?igsh=ZGJmbWRpdjN2eWgx" target="_blank" rel="noopener">Instagram</a><a class="footer-link" href="https://www.linkedin.com/in/esther-adufe-omoyele-3a4b81188/" target="_blank" rel="noopener">LinkedIn</a><a class="footer-link" href="https://youtube.com/@with_adufe?si=vF23jeR9P4ZyPtMy" target="_blank" rel="noopener">YouTube</a><a class="footer-link" href="https://substack.com/@adufeee?utm_source=share&utm_medium=android&r=1zfpif" target="_blank" rel="noopener">Substack</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 The Adufe Practice</p>
+        <p class="footer-disclaimer">Sessions are not psychotherapy or clinical treatment. If you require clinical support, please consult a qualified mental health professional.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════ BOOKING ═══════════════════ -->
+<div class="page" id="page-booking">
+  <div class="booking-hero">
+    <div class="bh-inner">
+      <div>
+        <p class="mp-eyebrow" style="color:var(--sienna-light)">Book a session</p>
+        <h1 class="bh-title">The first step is<br><em>always the hardest.</em></h1>
+        <p class="bh-text">You have already taken it by being here. The rest is just logistics.</p>
+      </div>
+      <div class="bh-steps">
+        <div class="bh-step">
+          <div class="bhs-num">1</div>
+          <div class="bhs-content">
+            <p class="bhs-title">Complete the short intake form</p>
+            <p class="bhs-desc">Tell me a little about what has brought you here, what you are looking for, and which session you would like. This helps me come prepared.</p>
+          </div>
+        </div>
+        <div class="bh-step">
+          <div class="bhs-num">2</div>
+          <div class="bhs-content">
+            <p class="bhs-title">Make payment by bank transfer</p>
+            <p class="bhs-desc">Transfer the session fee to the account details provided and reply with your proof of payment. This confirms your place — sessions are not held on a calendar slot until payment is received.</p>
+          </div>
+        </div>
+        <div class="bh-step">
+          <div class="bhs-num">3</div>
+          <div class="bhs-content">
+            <p class="bhs-title">Receive your confirmed slot</p>
+            <p class="bhs-desc">Once payment is confirmed, you will receive your calendar booking link to choose a time, plus a client agreement to sign before we meet. All sessions run via Zoom or Google Meet, your choice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-section">
+    <div class="bs-inner">
+
+      <!-- Discovery card -->
+      <div class="discovery-card">
+        <p class="dc-eyebrow">Start here</p>
+        <h2 class="dc-title">Discovery Session</h2>
+        <p class="dc-text">Before booking any further session, every new client begins with a 30-minute discovery conversation. This protects both of us — it lets you assess whether this is the right fit, and it lets me assess whether I am the right practitioner for what you need.</p>
+        <div class="dc-details">
+          <div class="dc-detail"><span class="dc-icon">⏱</span>30 minutes</div>
+          <div class="dc-detail"><span class="dc-icon">💰</span>₦10,000 · $10 international</div>
+          <div class="dc-detail"><span class="dc-icon">💻</span>Zoom or Google Meet, your choice (times shown in WAT)</div>
+          <div class="dc-detail"><span class="dc-icon">📋</span>Short intake form beforehand</div>
+        </div>
+        <div class="calendar-placeholder" style="background:var(--white);border-style:solid">
+          <div class="cp-icon">📅</div>
+          <p class="cp-title">Book your time — after payment</p>
+          <p class="cp-text">Once your intake form and bank transfer are complete, use the link below to choose your time. Please only book a slot after your payment has been sent — unpaid bookings may be cancelled to keep the calendar accurate for everyone.</p>
+          <a class="dc-btn" style="margin-top:16px;background:var(--green-deep)" href="https://outlook.live.com/owa/calendar/00000000-0000-0000-0000-000000000000/8bfbf886-bf61-410f-8b61-c0573d444c41/cid-ABA91D363F0E535D/index.html" target="_blank" rel="noopener">Choose your time →</a>
+        </div>
+        <a class="dc-btn" href="mailto:theadufepractice@outlook.com?subject=Discovery Session Booking">Email to start your discovery session booking →</a>
+      </div>
+
+      <!-- Intake form -->
+      <div class="booking-right">
+        <p class="booking-form-label">Session intake form</p>
+        <div class="intake-note">
+          <p class="in-title">Please complete this before we meet</p>
+          <p class="in-text">Your responses help me come to our session prepared. Everything you share is held in strict confidence. This form is for discovery sessions and first paid sessions only.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Full name</label>
+          <input type="text" id="intake-name" class="form-input" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input type="email" id="intake-email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">What has brought you here?</label>
+          <textarea id="intake-brought" class="form-input form-textarea" placeholder="A few sentences is enough. What are you carrying? What are you hoping for?"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Have you worked with a therapist or counsellor before?</label>
+          <select id="intake-prior-therapy" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Yes — currently in therapy</option>
+            <option>Yes — previously but not currently</option>
+            <option>No — this would be my first time</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Which session are you interested in?</label>
+          <select id="intake-session" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Discovery Session — ₦10,000 / $10</option>
+            <option>Single Support Session — ₦45,000 / $50</option>
+            <option>Adufe Method Intensive — ₦200,000 / $220</option>
+            <option>Monthly Retainer — ₦70,000 / $75 per month</option>
+            <option>Corporate / Organisation enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Is there anything important I should know before we meet?</label>
+          <textarea id="intake-notes" class="form-input form-textarea" style="min-height:80px" placeholder="Optional — but feel free to share anything that feels relevant."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitIntakeForm()">Submit intake form</button>
+        <p class="form-note">By submitting this form, you confirm that you understand sessions at The Adufe Practice are trauma-informed support sessions, not clinical therapy.</p>
+        <p class="form-note" style="margin-top:10px"><strong style="color:var(--text-body)">Privacy note:</strong> Information you share here is used only to prepare for and manage our work together. Your submission is processed via Google Forms, which stores it on Adufe's behalf; it is not sold, and is shared with third parties only where required by law or with your explicit consent (for example, a referral you request). Your data is handled in line with Nigeria's Data Protection Act (NDPA). You may ask to view, correct, or delete your information at any time by emailing theadufepractice@outlook.com.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Payment & Cancellation Policy -->
+  <div class="booking-section" style="background:var(--cream-deep);padding-top:0">
+    <div class="bs-inner">
+
+      <!-- Payment details -->
+      <div class="discovery-card" style="background:var(--green-deep)">
+        <p class="dc-eyebrow">Payment</p>
+        <h2 class="dc-title">Bank transfer details</h2>
+        <p class="dc-text">All sessions are paid in full by bank transfer before a slot is confirmed. Please transfer the exact session fee and reply to your intake email with proof of payment (a screenshot or transaction reference is fine).</p>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:22px 24px;margin-bottom:20px">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sienna-light);margin-bottom:14px">Nigeria — Naira transfers</p>
+          <p style="font-size:14px;color:rgba(248,244,237,0.75);line-height:2">
+            Account name: <strong style="color:var(--cream)">Omoyele Esther Olayinka</strong><br>
+            Bank: <strong style="color:var(--cream)">United Bank for Africa (UBA)</strong><br>
+            Account number: <strong style="color:var(--cream)">2109448185</strong>
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:22px 24px;margin-bottom:20px">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sienna-light);margin-bottom:14px">International — USD transfers</p>
+          <p style="font-size:14px;color:rgba(248,244,237,0.75);line-height:2">
+            Account name: <strong style="color:var(--cream)">Omoyele Esther</strong><br>
+            Platform: <strong style="color:var(--cream)">Raenest</strong><br>
+            Account number: <strong style="color:var(--cream)">213745114971</strong><br>
+            Routing number: <strong style="color:var(--cream)">101019644</strong>
+          </p>
+          <p style="font-size:12px;color:rgba(248,244,237,0.45);margin-top:10px">If your bank asks for a SWIFT/BIC code as well, please check with me before sending.</p>
+        </div>
+        <p class="dc-text" style="margin-bottom:0;font-size:13px">Session fees are not refundable to a different payment method once paid — see the cancellation policy for how cancellations and reschedules are handled.</p>
+      </div>
+
+      <!-- Cancellation policy -->
+      <div class="booking-right">
+        <p class="booking-form-label">Cancellation & rescheduling policy</p>
+        <div class="intake-note" style="margin-bottom:16px">
+          <p class="in-title">More than 48 hours' notice</p>
+          <p class="in-text">Full flexibility. Reschedule to another available time at no charge, or cancel for a full refund to your original payment method.</p>
+        </div>
+        <div class="intake-note" style="margin-bottom:16px;background:var(--sienna-pale);border-color:var(--sienna-light)">
+          <p class="in-title">24–48 hours' notice</p>
+          <p class="in-text">One complimentary reschedule is available. If cancelling outright, 50% of the session fee is credited toward a future session; the remaining 50% covers the reserved time.</p>
+        </div>
+        <div class="intake-note" style="margin-bottom:16px;background:var(--cream-deep);border-color:var(--border)">
+          <p class="in-title">Under 24 hours' notice, or no-show</p>
+          <p class="in-text">The full session fee is forfeited, as the time was held exclusively for you. Genuine emergencies are considered case by case — please reach out as soon as you can.</p>
+        </div>
+        <div class="intake-note" style="margin-bottom:16px">
+          <p class="in-title">If Adufe needs to reschedule</p>
+          <p class="in-text">You will be offered first right to the next available slot at no extra cost, or a full refund if no suitable time can be found.</p>
+        </div>
+        <div class="intake-note">
+          <p class="in-title">Multi-session packages & corporate bookings</p>
+          <p class="in-text">Each session within the Intensive or Retainer follows the same notice windows above. For corporate sessions (Lunch & Learn, Executive Support, Team Series), please allow 7 days' notice for a full refund and 72 hours' for a 50% refund, given the logistics involved in preparing these sessions.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><p class="footer-brand-name">The Adufe Practice</p><p class="footer-brand-desc">Trauma-informed support for individuals and organisations.</p></div>
+        <div><p class="footer-col-label">Navigate</p><a class="footer-link" onclick="showPage('home')">Home</a><a class="footer-link" onclick="showPage('about')">About</a><a class="footer-link" onclick="showPage('services')">Services</a><a class="footer-link" onclick="showPage('contact')">Contact</a></div>
+        <div><p class="footer-col-label">Connect</p><a class="footer-link" href="https://www.instagram.com/with_adufe?igsh=ZGJmbWRpdjN2eWgx" target="_blank" rel="noopener">Instagram</a><a class="footer-link" href="https://www.linkedin.com/in/esther-adufe-omoyele-3a4b81188/" target="_blank" rel="noopener">LinkedIn</a><a class="footer-link" href="https://youtube.com/@with_adufe?si=vF23jeR9P4ZyPtMy" target="_blank" rel="noopener">YouTube</a><a class="footer-link" href="https://substack.com/@adufeee?utm_source=share&utm_medium=android&r=1zfpif" target="_blank" rel="noopener">Substack</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 The Adufe Practice</p>
+        <p class="footer-disclaimer">Sessions are not psychotherapy or clinical treatment. If you require clinical support, please consult a qualified mental health professional.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<div class="page" id="page-contact">
+
+  <div class="contact-hero">
+    <div class="ch-inner">
+      <h1 class="ch-title">Let's talk<br><em>about what you need.</em></h1>
+      <p class="ch-sub">Whether you are an individual looking for support, an organisation exploring what wellness looks like for your team, or a media or research enquiry — the right door is below.</p>
+    </div>
+  </div>
+
+  <div class="contact-body">
+    <div class="cb-inner">
+      <div class="contact-form-side">
+        <p style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px">Send a message</p>
+        <div class="form-group">
+          <label class="form-label">Your name</label>
+          <input type="text" id="contact-name" class="form-input" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input type="email" id="contact-email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nature of enquiry</label>
+          <select id="contact-enquiry" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Individual session enquiry</option>
+            <option>Corporate / organisational programme</option>
+            <option>Speaking engagement</option>
+            <option>Media or press enquiry</option>
+            <option>Research collaboration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your message</label>
+          <textarea id="contact-message" class="form-input form-textarea" style="min-height:140px" placeholder="Tell me what you are looking for and how I can help."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitContactForm()">Send message</button>
+        <p class="form-note" style="margin-top:14px">Response time: within 48 hours for individual enquiries. Corporate proposals: within 5 working days.</p>
+        <p class="form-note" style="margin-top:10px"><strong style="color:var(--text-body)">Privacy note:</strong> Information shared through this form is used only to respond to your enquiry. Your submission is processed via Google Forms, which stores it on Adufe's behalf; it is not sold, and is shared with third parties only where required by law. Your data is handled in line with Nigeria's Data Protection Act (NDPA). You may ask to view, correct, or delete your information at any time by emailing theadufepractice@outlook.com.</p>
+      </div>
+
+      <div class="contact-info-side">
+        <div class="contact-info-card">
+          <p class="cic-label">Individual clients</p>
+          <p class="cic-title">Begin with a discovery session</p>
+          <p class="cic-text">The fastest path to working together is booking your 30-minute discovery session (₦10,000 / $10). No long-term commitment, no pressure — just an honest conversation about whether this practice is the right fit.</p>
+          <div style="margin-top:16px">
+            <button class="btn-dark" onclick="showPage('booking')" style="font-size:13px;padding:10px 20px">Book discovery session →</button>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <p class="cic-label">Direct contact</p>
+          <p class="cic-title">Email</p>
+          <p class="cic-text">theadufepractice@outlook.com<br><br>For urgent enquiries or if you prefer to reach out directly before completing a form.</p>
+        </div>
+
+        <div class="corporate-card">
+          <p class="cc-label">Organisations & corporate</p>
+          <p class="cc-title">Build something lasting for your team</p>
+          <p class="cc-text">From a single Lunch and Learn to a three-month team wellbeing programme — corporate enquiries are welcome. I will respond with a tailored proposal within five working days.</p>
+          <button class="cc-btn" onclick="document.getElementById('contact-enquiry').value='Corporate / organisational programme'; document.getElementById('contact-name').scrollIntoView({behavior:'smooth', block:'center'})">Start a corporate enquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><p class="footer-brand-name">The Adufe Practice</p><p class="footer-brand-desc">Trauma-informed support for individuals and organisations.</p></div>
+        <div><p class="footer-col-label">Navigate</p><a class="footer-link" onclick="showPage('home')">Home</a><a class="footer-link" onclick="showPage('about')">About</a><a class="footer-link" onclick="showPage('services')">Services</a><a class="footer-link" onclick="showPage('booking')">Book</a></div>
+        <div><p class="footer-col-label">Connect</p><a class="footer-link" href="https://www.instagram.com/with_adufe?igsh=ZGJmbWRpdjN2eWgx" target="_blank" rel="noopener">Instagram</a><a class="footer-link" href="https://www.linkedin.com/in/esther-adufe-omoyele-3a4b81188/" target="_blank" rel="noopener">LinkedIn</a><a class="footer-link" href="https://youtube.com/@with_adufe?si=vF23jeR9P4ZyPtMy" target="_blank" rel="noopener">YouTube</a><a class="footer-link" href="https://substack.com/@adufeee?utm_source=share&utm_medium=android&r=1zfpif" target="_blank" rel="noopener">Substack</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 The Adufe Practice</p>
+        <p class="footer-disclaimer">Sessions are not psychotherapy or clinical treatment. If you require clinical support, please consult a qualified mental health professional.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
+  document.getElementById('page-' + id).classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ══════════════════════════════════
+   GOOGLE FORMS SUBMISSION
+   Replace the placeholder values below once your Google Forms are built.
+   See the setup notes for how to get the form action URL and entry IDs.
+══════════════════════════════════ */
+
+// --- INTAKE FORM (Booking page) ---
+const INTAKE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSeYHwu7n4OhcnPgjc4IKn8d1WgXXxRbvGDmVlXEx4rw5ES-Bg/formResponse";
+const INTAKE_FIELDS = {
+  name:          "entry.2022558950",
+  email:         "entry.578608742",
+  broughtYou:    "entry.621201182",
+  priorTherapy:  "entry.1110772747",
+  session:       "entry.903218230",
+  notes:         "entry.232579812"
+};
+
+// --- CONTACT FORM (Contact page) ---
+const CONTACT_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfLANsgndIQOfx_7_3dJDOHABzmwTU_kKOjzdeqHChqPDUtvQ/formResponse";
+const CONTACT_FIELDS = {
+  name:    "entry.1667787237",
+  email:   "entry.835038821",
+  enquiry: "entry.462599054",
+  message: "entry.1673281104"
+};
+
+function submitIntakeForm() {
+  const name = document.getElementById('intake-name').value.trim();
+  const email = document.getElementById('intake-email').value.trim();
+
+  if (!name || !email) {
+    alert('Please fill in at least your name and email before submitting.');
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append(INTAKE_FIELDS.name, name);
+  data.append(INTAKE_FIELDS.email, email);
+  data.append(INTAKE_FIELDS.broughtYou, document.getElementById('intake-brought').value.trim());
+  data.append(INTAKE_FIELDS.priorTherapy, document.getElementById('intake-prior-therapy').value);
+  data.append(INTAKE_FIELDS.session, document.getElementById('intake-session').value);
+  data.append(INTAKE_FIELDS.notes, document.getElementById('intake-notes').value.trim());
+
+  fetch(INTAKE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data.toString()
+  }).then(() => {
+    alert('Thank you. Your intake form has been received. You will hear from Adufe within 24 hours to confirm your booking.');
+    document.getElementById('intake-name').closest('.booking-right').querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }).catch(() => {
+    alert('Something went wrong sending your form. Please email theadufepractice@outlook.com directly so nothing gets missed.');
+  });
+}
+
+function submitContactForm() {
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+
+  if (!name || !email) {
+    alert('Please fill in at least your name and email before submitting.');
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append(CONTACT_FIELDS.name, name);
+  data.append(CONTACT_FIELDS.email, email);
+  data.append(CONTACT_FIELDS.enquiry, document.getElementById('contact-enquiry').value);
+  data.append(CONTACT_FIELDS.message, document.getElementById('contact-message').value.trim());
+
+  fetch(CONTACT_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data.toString()
+  }).then(() => {
+    alert('Thank you for reaching out. Adufe will respond within 48 hours.');
+    document.getElementById('contact-name').closest('.contact-form-side').querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }).catch(() => {
+    alert('Something went wrong sending your message. Please email theadufepractice@outlook.com directly so nothing gets missed.');
+  });
+}
+</script>
+</body>
+</html>
