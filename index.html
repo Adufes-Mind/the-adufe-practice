@@ -1301,10 +1301,44 @@ body {
           <p class="in-title">Please complete this before we meet</p>
           <p class="in-text">Your responses help me come to our session prepared. Everything you share is held in strict confidence. This form is for discovery sessions and first paid sessions only.</p>
         </div>
-        <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white)">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYHwu7n4OhcnPgjc4IKn8d1WgXXxRbvGDmVlXEx4rw5ES-Bg/viewform?embedded=true" width="100%" height="1100" style="border:0;display:block" title="Session intake form">Loading…</iframe>
+        <div class="form-group">
+          <label class="form-label">Full name</label>
+          <input type="text" id="intake-name" class="form-input" placeholder="Your name">
         </div>
-        <p class="form-note" style="margin-top:14px">By submitting this form, you confirm that you understand sessions at The Adufe Practice are trauma-informed support sessions, not clinical therapy.</p>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input type="email" id="intake-email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">What has brought you here?</label>
+          <textarea id="intake-brought" class="form-input form-textarea" placeholder="A few sentences is enough. What are you carrying? What are you hoping for?"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Have you worked with a therapist or counsellor before?</label>
+          <select id="intake-prior-therapy" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Yes — currently in therapy</option>
+            <option>Yes — previously but not currently</option>
+            <option>No — this would be my first time</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Which session are you interested in?</label>
+          <select id="intake-session" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Discovery Session — ₦10,000 / $10</option>
+            <option>Single Support Session — ₦45,000 / $50</option>
+            <option>Adufe Method Intensive — ₦200,000 / $220</option>
+            <option>Monthly Retainer — ₦70,000 / $75 per month</option>
+            <option>Corporate / Organisation enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Is there anything important I should know before we meet?</label>
+          <textarea id="intake-notes" class="form-input form-textarea" style="min-height:80px" placeholder="Optional — but feel free to share anything that feels relevant."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitIntakeForm()">Submit intake form</button>
+        <p class="form-note">By submitting this form, you confirm that you understand sessions at The Adufe Practice are trauma-informed support sessions, not clinical therapy.</p>
         <p class="form-note" style="margin-top:10px"><strong style="color:var(--text-body)">Privacy note:</strong> Information you share here is used only to prepare for and manage our work together. Your submission is processed via Google Forms, which stores it on Adufe's behalf; it is not sold, and is shared with third parties only where required by law or with your explicit consent (for example, a referral you request). Your data is handled in line with Nigeria's Data Protection Act (NDPA). You may ask to view, correct, or delete your information at any time by emailing theadufepractice@outlook.com.</p>
       </div>
 
@@ -1399,9 +1433,31 @@ body {
     <div class="cb-inner">
       <div class="contact-form-side">
         <p style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px">Send a message</p>
-        <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white)">
-          <iframe id="contact-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfLANsgndIQOfx_7_3dJDOHABzmwTU_kKOjzdeqHChqPDUtvQ/viewform?embedded=true" width="100%" height="900" style="border:0;display:block" title="Contact form">Loading…</iframe>
+        <div class="form-group">
+          <label class="form-label">Your name</label>
+          <input type="text" id="contact-name" class="form-input" placeholder="Full name">
         </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input type="email" id="contact-email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nature of enquiry</label>
+          <select id="contact-enquiry" class="form-input form-select">
+            <option value="">Select one</option>
+            <option>Individual session enquiry</option>
+            <option>Corporate / organisational programme</option>
+            <option>Speaking engagement</option>
+            <option>Media or press enquiry</option>
+            <option>Research collaboration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your message</label>
+          <textarea id="contact-message" class="form-input form-textarea" style="min-height:140px" placeholder="Tell me what you are looking for and how I can help."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitContactForm()">Send message</button>
         <p class="form-note" style="margin-top:14px">Response time: within 48 hours for individual enquiries. Corporate proposals: within 5 working days.</p>
         <p class="form-note" style="margin-top:10px"><strong style="color:var(--text-body)">Privacy note:</strong> Information shared through this form is used only to respond to your enquiry. Your submission is processed via Google Forms, which stores it on Adufe's behalf; it is not sold, and is shared with third parties only where required by law. Your data is handled in line with Nigeria's Data Protection Act (NDPA). You may ask to view, correct, or delete your information at any time by emailing theadufepractice@outlook.com.</p>
       </div>
@@ -1426,7 +1482,7 @@ body {
           <p class="cc-label">Organisations & corporate</p>
           <p class="cc-title">Build something lasting for your team</p>
           <p class="cc-text">From a single Lunch and Learn to a three-month team wellbeing programme — corporate enquiries are welcome. I will respond with a tailored proposal within five working days.</p>
-          <button class="cc-btn" onclick="document.getElementById('contact-form-iframe').scrollIntoView({behavior:'smooth', block:'center'})">Start a corporate enquiry</button>
+          <button class="cc-btn" onclick="document.getElementById('contact-enquiry').value='Corporate / organisational programme'; document.getElementById('contact-name').scrollIntoView({behavior:'smooth', block:'center'})">Start a corporate enquiry</button>
         </div>
       </div>
     </div>
@@ -1453,6 +1509,88 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
   document.getElementById('page-' + id).classList.add('visible');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ══════════════════════════════════
+   GOOGLE FORMS SUBMISSION
+══════════════════════════════════ */
+
+// --- INTAKE FORM (Booking page) ---
+const INTAKE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSeYHwu7n4OhcnPgjc4IKn8d1WgXXxRbvGDmVlXEx4rw5ES-Bg/formResponse";
+const INTAKE_FIELDS = {
+  name:          "entry.2022558950",
+  email:         "entry.578608742",
+  broughtYou:    "entry.621201182",
+  priorTherapy:  "entry.1110772747",
+  session:       "entry.903218230",
+  notes:         "entry.232579812"
+};
+
+// --- CONTACT FORM (Contact page) ---
+const CONTACT_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfLANsgndIQOfx_7_3dJDOHABzmwTU_kKOjzdeqHChqPDUtvQ/formResponse";
+const CONTACT_FIELDS = {
+  name:    "entry.1667787237",
+  email:   "entry.835038821",
+  enquiry: "entry.462599054",
+  message: "entry.1673281104"
+};
+
+function submitIntakeForm() {
+  const name = document.getElementById('intake-name').value.trim();
+  const email = document.getElementById('intake-email').value.trim();
+
+  if (!name || !email) {
+    alert('Please fill in at least your name and email before submitting.');
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append(INTAKE_FIELDS.name, name);
+  data.append(INTAKE_FIELDS.email, email);
+  data.append(INTAKE_FIELDS.broughtYou, document.getElementById('intake-brought').value.trim());
+  data.append(INTAKE_FIELDS.priorTherapy, document.getElementById('intake-prior-therapy').value);
+  data.append(INTAKE_FIELDS.session, document.getElementById('intake-session').value);
+  data.append(INTAKE_FIELDS.notes, document.getElementById('intake-notes').value.trim());
+
+  fetch(INTAKE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data.toString()
+  }).then(() => {
+    alert('Thank you. Your intake form has been received. You will hear from Adufe within 24 hours to confirm your booking.');
+    document.getElementById('intake-name').closest('.booking-right').querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }).catch(() => {
+    alert('Something went wrong sending your form. Please email theadufepractice@outlook.com directly so nothing gets missed.');
+  });
+}
+
+function submitContactForm() {
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+
+  if (!name || !email) {
+    alert('Please fill in at least your name and email before submitting.');
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append(CONTACT_FIELDS.name, name);
+  data.append(CONTACT_FIELDS.email, email);
+  data.append(CONTACT_FIELDS.enquiry, document.getElementById('contact-enquiry').value);
+  data.append(CONTACT_FIELDS.message, document.getElementById('contact-message').value.trim());
+
+  fetch(CONTACT_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data.toString()
+  }).then(() => {
+    alert('Thank you for reaching out. Adufe will respond within 48 hours.');
+    document.getElementById('contact-name').closest('.contact-form-side').querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }).catch(() => {
+    alert('Something went wrong sending your message. Please email theadufepractice@outlook.com directly so nothing gets missed.');
+  });
 }
 </script>
 </body>
